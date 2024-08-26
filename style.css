@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@font-face {
+    font-family:digital-7;
+    src: url('digital-7.ttf');
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #0d0d0d;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+    height: 45%;
+    width: 45%;
+    display: grid;
+    grid-template-rows:(35% 65%);
+    border: solid 0.3rem #1a1a1a;
+    align-items: center;justify-content: center;
+    border-radius: 3rem;
+}
+.day
+{
+    font-size: 3.5rem;
+    font-family: "Lobster", sans-serif;
+    letter-spacing: 0.3rem;
+    margin-top:3rem;
+    border-bottom:2px solid #1a1a1a ;
+    text-align: center;
+    padding: 0 1rem;
+    background: linear-gradient(90deg,#00dbde,#fc00ff );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    background-size: 500% 500%;
+    animation: sample 2s ease infinite;
+}
+.box
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+.clock
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    width: 70%;
+    height: 8rem;
+    font-family:digital-7;
+    background-color: #1a1a1a;
+    position: relative;
+    border-radius: 1rem;
+    font-size: 4rem;
+    overflow: hidden;
+    
+}
+.clock .front-clock div
+{
+    background: linear-gradient(90deg,#ff4545,#ff0095,#00ff99,#006aff );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.clock p
+{
+    font-size: 1.3rem;
+    color:#2370f5;
+}
+.am-pm p
+{
+    font-size:3rem;
+    font-family: "Lobster", sans-serif;
+    letter-spacing: 0.4rem;
+    font-weight:600;
+    margin-top:4rem;
+    text-align: center;
+    padding: 0 0.5rem;
+    background: linear-gradient(90deg,#00dbde,#fc00ff );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-size: 500% 500%;
+    animation: sample 1s ease infinite;
+}
+@keyframes sample
+{
+    0%
+    {
+        background-position: 0%;
+    }
+    50%{
+        background-position: 100%;
+
+    }
+    100%
+    {
+        background-position: 0%;
+    }
+}
+.clock::before
+{
+    content: "";
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width: 90%;
+    height: 8rem;
+    background: linear-gradient(0deg, transparent,transparent,#2370f5,#2370f5,#2370f5);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 2s  linear infinite;
+}
+.clock::after
+{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:90%;
+    height: 8rem;
+    background: linear-gradient(0deg, transparent, transparent,#b91fdc,#b91fdc,#b91fdc);
+    z-index:0;
+    transform-origin: bottom right;
+    animation: animate 2s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate 
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+
+    }
+    
+}
+
+.front-clock
+{
+    text-align: center;
+    padding-top: 0.6rem;
+    background-color: #0d0d0d;  
+    width: 95%;
+    height: 95%;   
+    border-radius: 1rem;
+    z-index: 1;
+}
+@media (max-width:1300px)
+{
+    .container
+    {
+        width: 70%;
+    }
+    .clock
+    {
+        font-size:3rem;
+    }
+}
+@media (max-width:700px)
+{
+    .container
+    {
+        grid-template-rows: (20% 60% 10%);
+        height: auto;
+    }
+    h1
+    {
+        margin-top: 0;
+    }
+    .box
+    {
+        display: grid;
+        grid-template-rows: 27% 27% 27% 10% ;
+    }
+    .clock
+    {
+        width: 30vw;
+        margin: 0;
+        font-size: 4rem;
+        margin-top: 0.8rem;
+    }
+}
