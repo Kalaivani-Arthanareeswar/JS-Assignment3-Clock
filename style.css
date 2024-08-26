@@ -32,10 +32,10 @@ body
 }
 .day
 {
-    font-size: 3.5rem;
+    font-size:3.5rem;
     font-family: "Lobster", sans-serif;
     letter-spacing: 0.3rem;
-    margin-top:3rem;
+    margin-top:2rem;
     border-bottom:2px solid #1a1a1a ;
     text-align: center;
     padding: 0 1rem;
@@ -52,7 +52,7 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.5rem;
+    margin-bottom:0.8rem;
 }
 .clock
 {
@@ -62,26 +62,27 @@ body
     justify-content: center;
     margin: 0 0.5rem;
     width: 70%;
-    height: 8rem;
+    height: 8.5rem;
     font-family:digital-7;
     background-color: #1a1a1a;
     position: relative;
     border-radius: 1rem;
-    font-size: 4rem;
+    
     overflow: hidden;
     
 }
 .clock .front-clock div
 {
-    background: linear-gradient(90deg,#ff4545,#ff0095,#00ff99,#006aff );
+    background: linear-gradient(180deg,#fb829e,#ff0095,#00ff99,#006aff );
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent; font-size:5.3rem;
+    margin-bottom:10px;
 }
 
 .clock p
 {
     font-size: 1.3rem;
-    color:#2370f5;
+    color:#aac1b5;
 }
 .am-pm p
 {
@@ -181,6 +182,7 @@ body
     {
         grid-template-rows: (20% 60% 10%);
         height: auto;
+        margin-top: 30vh;
     }
     h1
     {
@@ -197,5 +199,10 @@ body
         margin: 0;
         font-size: 4rem;
         margin-top: 0.8rem;
+    }
+    .day
+    {
+        margin-top: 3.6rem;
+        font-size: 2.7rem;
     }
 }
